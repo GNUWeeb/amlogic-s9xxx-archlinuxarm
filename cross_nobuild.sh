@@ -172,7 +172,7 @@ config_repos() {
 
 prepare_host_dirs() {
     rm -rf cache
-    mkdir -p {bin,cache/root,out,src/pkg}
+    mkdir -p {bin,cache/root,out,src/pkg,cache/root/etc/pacman.d/gnupg}
 }
 
 prepare_pacman_static() {
