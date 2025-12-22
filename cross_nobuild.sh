@@ -646,7 +646,7 @@ if [[ "${#install_pkgs_bootstrap[@]}" == 0 ]]; then
 fi
     
 if [[ "${#install_pkgs_normal[@]}" == 0 ]]; then
-    install_pkgs_normal=(vim nano sudo openssh linux-aarch64-flippy-dtb-amlogic linux-firmware-amlogic-ophub-git uboot-amlogic-ophub ampart yaopenvfd uboot-legacy-initrd-hooks)
+    install_pkgs_normal=(vim nano sudo openssh linux-aarch64-flippy-git-dtb-amlogic ampart yaopenvfd)
 fi
 
 if [[ "${#install_pkgs_kernel[@]}" == 0 ]]; then
