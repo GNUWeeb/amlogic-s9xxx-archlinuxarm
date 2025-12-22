@@ -172,7 +172,7 @@ config_repos() {
 
 prepare_host_dirs() {
     rm -rf cache
-    mkdir -p {bin,cache/root,out,src/pkg,cache/root/etc/pacman.d/gnupg}
+    mkdir -p {bin,cache/root,out,src/pkg}
 }
 
 prepare_pacman_static() {
@@ -181,7 +181,7 @@ prepare_pacman_static() {
 
 mount_root() {
     mount tmpfs-root cache/root -t tmpfs -o mode=0755,nosuid 
-    mkdir -p cache/root/{boot,dev/{pts,shm},etc/pacman.d,proc,run,sys/module,tmp,var/{cache/pacman/pkg,lib/pacman,log}}
+    mkdir -p cache/root/{boot,dev/{pts,shm},etc/pacman.d,etc/pacman.d/gnupg,proc,run,sys/module,tmp,var/{cache/pacman/pkg,lib/pacman,log}}
     chmod 1777 cache/root/{dev/shm,tmp}
     chmod 555 cache/root/{proc,sys}
     mount proc cache/root/proc -t proc -o nosuid,noexec,nodev
