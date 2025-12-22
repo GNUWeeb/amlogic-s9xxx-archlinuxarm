@@ -317,7 +317,7 @@ setup_kernel() {
         zstd -T0 "${file_initramfs}"
         mv "${file_initramfs}"{.zst,}
     done
-    chroot cache/root img2uimg
+    # chroot cache/root img2uimg
 }
 
 setup_extlinux() {
@@ -331,9 +331,9 @@ DEFAULT ${install_pkgs_kernel[0]}" > "${conf}"
     for kernel in "${install_pkgs_kernel[@]}"; do
         conf_linux="vmlinuz-${kernel}"
         if [[ "${initramfs}" == 'booster' ]]; then
-            conf_initrd="booster-${kernel}.uimg"
+            conf_initrd="booster-${kernel}.img"
         else
-            conf_initrd="initramfs-${kernel}-fallback.uimg"
+            conf_initrd="initramfs-${kernel}-fallback.img"
         fi
         conf_fdtdir="dtbs/${kernel}"
         conf_fdt="dtbs/${kernel}/amlogic/PLEASE_SET_YOUR_DTB_AND_UNCOMMENT_THIS_LINE_AND_COMMENT_FDTDIR.dtb"
