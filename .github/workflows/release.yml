@@ -1,4 +1,4 @@
-name: Release nightly
+name: Create the image for Arch Linux ARM on S9xxx
 on:
   workflow_dispatch:
   # schedule:
@@ -65,8 +65,8 @@ jobs:
       - name: Release
         uses: ncipollo/release-action@v1
         with:
-          name: Nightly
-          tag: nightly
+          name: Rolling
+          tag: rolling
           artifacts: out/latest/*
           allowUpdates: true
           removeArtifacts: true
